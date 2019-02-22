@@ -1,1 +1,10 @@
 language: node_js
+install:
+  - npm install
+  
+env:
+  global:
+    - "FTP_USER=reimmarcel"
+    - "FTP_PASSWORD=Hesoyam1999"
+after_success:
+    "curl -T index.html -u $FTP_USER:$FTP_PASSWORD ftp://reimmarcel.bplaced.net"
